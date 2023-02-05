@@ -9,7 +9,7 @@ async def cmd_start(message: types.Message):
     /start command handler for private chats
     :param message: Telegram message with "/start" command
     """
-    await message.answer(f"Your Telegram ID is {html.code(message.chat.id)}\n {html.code(message.chat.username)}")
+    await message.answer(f"Your Telegram ID is {html.code(message.chat.id)}\n ")
 
 
 @router.message(F.chat.type == "private", commands="id")
@@ -18,7 +18,7 @@ async def cmd_id_pm(message: types.Message):
     /id command handler for private messages
     :param message: Telegram message with "/id" command
     """
-    await message.answer(f"Your Telegram ID is {html.code(message.from_user.id)}")
+    await message.answer(f"Your Telegram ID is {html.code(message.from_user.id)}\n  Name is {html.code(message.from_user.username)}")
 
 
 @router.message(F.chat.type.in_({"group", "supergroup"}), commands="id")
