@@ -9,7 +9,7 @@ async def cmd_start(message: types.Message):
     /start command handler for private chats
     :param message: Telegram message with "/start" command
     """
-    await message.answer(f"Your Telegram ID is {html.code(message.chat.id)}\nHelp and source code: /help")
+    await message.answer(f"Your Telegram ID is {html.code(message.chat.id)}\n {html.code(message.chat.username)}")
 
 
 @router.message(F.chat.type == "private", commands="id")
